@@ -17,16 +17,17 @@ public class MathQuestionController {
     private final QuestionService mathQuestionService;
 
     public MathQuestionController(@Qualifier("mathQuestionService") QuestionService mathQuestionService) {
-        this.mathQuestionService = mathQuestionService ;
+        this.mathQuestionService = mathQuestionService;
     }
+
     @GetMapping(value = "/add")
     public Question addQuestion(@RequestParam String question, @RequestParam String answer) {
-        return mathQuestionService.add(question, answer) ;
+        return mathQuestionService.add(question, answer);
     }
 
     @GetMapping("/remove")
     public Question removeQuestion(@RequestParam Question question, @RequestParam String answer) {
-        return mathQuestionService.remove(question) ;
+        return mathQuestionService.remove(question);
     }
 
     @GetMapping

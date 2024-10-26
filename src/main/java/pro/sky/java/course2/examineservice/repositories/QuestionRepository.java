@@ -8,6 +8,8 @@ import java.util.List;
 @Repository
 public interface QuestionRepository {
     void add(Question question);
+
     void remove(Question question);
+
     List<Question> getAll();
 }
