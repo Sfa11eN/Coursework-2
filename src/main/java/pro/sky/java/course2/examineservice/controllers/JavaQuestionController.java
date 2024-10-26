@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/exam/java")
 public class JavaQuestionController {
-    private final QuestionService questionService ;
+    private final QuestionService questionService;
 
     public JavaQuestionController(@Qualifier("javaQuestionService") QuestionService questionService) {
         this.questionService = questionService;
@@ -22,17 +22,17 @@ public class JavaQuestionController {
 
     @GetMapping(value = "/add")
     public Question addQuestion(@RequestParam String question, @RequestParam String answer) {
-        return questionService.add(question, answer) ;
+        return questionService.add(question, answer);
     }
 
     @GetMapping("/remove")
     public Question removeQuestion(@RequestParam Question question, @RequestParam String answer) {
-        return questionService.remove(question) ;
+        return questionService.remove(question);
     }
 
     @GetMapping
     public List<Question> getAll() {
-        return questionService.getAll() ;
+        return questionService.getAll();
     }
 
 }
